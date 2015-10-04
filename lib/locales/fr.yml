@@ -1,0 +1,4 @@
+fr:
+  faker:
+    name:
+      course_type: [Ruby On Rails, DataBase, Oracle, Java, C, CPLUS, perl]
