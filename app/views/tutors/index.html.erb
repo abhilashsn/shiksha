@@ -1,6 +1,6 @@
-<h3 style="color:red"> LISTING ALL TUTOR</h3>
-
-<table class="table table-condensed">
+<center><h3 style="color:red"> LISTING ALL TUTOR</h3></center><br/>
+<div class="table-responsive">
+<table class="table table-hover">
   <thead>
     <tr class="success">
       <th>Tutor Name</th>
@@ -12,13 +12,12 @@
 	  <th>Location</th>
 	  <th>PhoneNumber</th>
 	  <th>EmailId</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tutor.each do |tutor| %>
-      <tr class="active">
+      <tr class="success">
         <td class="warning"><%= tutor.tutor_name %></td>
         <td class="success"><%= tutor.qualification %></td>
         <td class="danger"><%= tutor.experience %></td>
@@ -32,7 +31,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 

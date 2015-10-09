@@ -1,0 +1,25 @@
+<center><h3 style="color:red"> LISTING ALL COURSES</h3></center><br/>
+
+<table class="table table-condensed">
+  <thead>
+    <tr class="success">
+      <th>Course Name</th>
+      <th>Course Type</th>
+      <th>Course Duration</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr class="active">
+        <td class="warning"><%= course.course_name %></td>
+        <td class="success"><%= course.course_type %></td>
+        <td class="danger"><%= course.course_duration %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
