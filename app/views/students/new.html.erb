@@ -1,0 +1,21 @@
+<h1>  New Student </h3>
+
+	<%= form_for @students do |s| %>
+
+	<label>Name:</label><br/>
+	<%= s.text_field :student_name %><br/>
+
+	<label>Qualification:</label><br/>
+	<%= s.text_field :student_qualification%><br/>
+
+	<label>Email Information:</label><br/>
+	<%= s.email_field :email_id %><br/>
+
+	<label>Phone Number: </label><br/>
+	<%= s.number_field :phone_number %><br/>
+
+	<label>Address:</label><br/>
+	<%= s.text_area :address%><br/>
+
+	<%= s.submit %>
+	<%end%>
