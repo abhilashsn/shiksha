@@ -15,9 +15,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'haml', '~> 4.0.5'
 # Use jquery as the JavaScript library
 #gem 'activeadmin', github: 'activeadmin'
 gem 'jquery-rails'
+gem 'haml', '~> 4.0.5'
 gem 'annotate'
 gem "twitter-bootstrap-rails"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

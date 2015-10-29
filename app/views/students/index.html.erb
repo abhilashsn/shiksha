@@ -1,6 +1,21 @@
-<h3> Listing all students </h3>
 
-   <% @students.each do |student| %>
-   		<%= student.student_name %>
-   	<% end %>
+<center>
+    <h2> Students and thier batches </h2>
 
+
+    <h1 style="color:#FF91AF">Student</h1><br/>
+
+    	
+    			<h2 style="color:#BFFF00"><% Student.all.each do |student| %></h2>
+    				<h1><li style="color:pink"><%= student.student_name %></li></h1>
+    			<ul>
+
+    				
+    			<% student.batches.each do |batch| %>
+    				<li style="color:green"><%= batch.batch_name %></li>
+    				<%end%><br/>
+    				</ul>
+    			<%end%>
+    	
+
+</center>

@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shiksha</title>
+  <title>Shiksha | Online Student Management Application</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= yield %>
+	<div class="container">
+	<% if user_signed_in?%>
+	Welcome <%= current_user.email %> (<%= current_user.current_sign_in_ip%>) |
+	<%= link_to "Account Setting", edit_user_registration_path %> | <%= link_to "sign_out", destroy_user_session_path, method: :delete%>
+	<%= render :template =>	 "students/index" %>
 
+	<% else %>
+
+	<header>
+		<header_inner>
+	
+	<%= link_to "Sign In", new_user_session_path %> 
+	<% end %>
+	</header_inner>
+</header>
+	<%= notice %>
+	<%= alert %>
+ <%= yield %>
+ <div>
+
+
+	
 </body>
+
 </html>

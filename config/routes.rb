@@ -7,9 +7,12 @@
 Rails.application.routes.draw do
   
 
+  devise_for :users
+  get 'homepages/index'
+
   get 'students/index'
 
-  get 'homepages/index'
+  #get 'homepages/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -21,6 +24,8 @@ Rails.application.routes.draw do
    resources :clients
    resources :tutors
    resources :students
+   resources :courses
+   resources :homepages
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
