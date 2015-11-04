@@ -1,26 +1,39 @@
 class StudentsController < ApplicationController
-	
-  def index
-  	@students = Student.all
-  end
 
-  def new
-  	@students =Student.new
-  end
+	  before_action :set_student, only: [:show, :edit, :update, :destroy]
 
-  def create 
-  	@students = Student.new(student_params)
-    if @students.save
-      redirect_to students_path
-    else 
-      render action: "new"
+	def index 
+		@student = Student.all
+	end
+
+	def new 
+		@student = Student.new
+	end
+
+	def create 
+		@student = Student.new(student_params)
+		if @student.save 
+			redirect_to students_path
+		else
+			render action: "new"
+		end
+	end
+
+	def show 
+		@student = Student.find(params[:id])
+	end
+
+
+
+
+	private 
+
+	def set_student
+      @student = Student.find(params[:id])
     end
-  end
 
-
-  private
-    def student_params
-      params[:student].permit(:student_name, :qualification, :email_id, :phone_number, :address)
-    end
+	def student_params
+		params[:student].permit(:student_name,:student_qualification,:email_id,:phone_number,:address)
+	end 
 
 end

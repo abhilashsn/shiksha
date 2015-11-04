@@ -1,6 +1,6 @@
 <div class="container center-block">
 
-<h1>  New Student </h3>
+<h1>   Students </h3>
 
 <%= form_for @student, :html => { :class => 'form-group' } do |s| %>
   <div class="form-group">
@@ -23,9 +23,9 @@
 </div>
 
  
-<%= collection_select(:student, :batch_ids, 
+<%#= collection_select(:student, :batch_ids, 
               Batch.all, 
-              :id, :batch_name, {:selected => @student.batch_ids},prompt: "select batch", class: "input-sm")%>	<br/>
+              :id, :batch_name, {:selected => @students.batch_ids},prompt: "select batch", class: "input-sm")%>	
 
 
 

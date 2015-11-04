@@ -7,11 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
 	<% if user_signed_in?%>
 	Welcome <%= current_user.email %> (<%= current_user.current_sign_in_ip%>) |
 	<%= link_to "Account Setting", edit_user_registration_path %> | <%= link_to "sign_out", destroy_user_session_path, method: :delete%>
-	<%= render :template =>	 "students/index" %>
 
 	<% else %>
 
@@ -25,7 +23,6 @@
 	<%= notice %>
 	<%= alert %>
  <%= yield %>
- <div>
 
 
 	

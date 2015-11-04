@@ -20,6 +20,7 @@ gem 'haml', '~> 4.0.5'
 #gem 'activeadmin', github: 'activeadmin'
 gem 'jquery-rails'
 gem 'haml', '~> 4.0.5'
+gem 'bootstrap-material-design'
 gem 'annotate'
 gem "twitter-bootstrap-rails"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

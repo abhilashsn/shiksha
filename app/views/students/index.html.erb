@@ -1,21 +1,39 @@
+<h3> Listing all students </h3>
 
-<center>
-    <h2> Students and thier batches </h2>
+<%= link_to "add new", new_student_path%>
+
+<div classs="container">
+<table border="1">
+	<thead>
+		<tr>
+			<th> Slno</th>
+			<th> Name</th>
+			<th> Qualification</th>
+			<th>Email Id</th>
+			<th>Phone Number</td>
+			<th>Address</th>
+			<th>Batch</td>
+		</tr>
+	</thead>
+</tbody>  
 
 
-    <h1 style="color:#FF91AF">Student</h1><br/>
+<% @student.each_with_index do |student,index| %>
+<tr> 
+	<td> <%=index+1%></td>
+	<td> <%=student.student_name%> </td>
+	<td> <%=student.student_qualification%></td>
+	<td> <%=student.email_id%></td>
+	<td> <%=student.phone_number%></td>
+	<td> <%=student.address%></td>
+	<td> <% @batches=student.batch_students.all%>
+            <% for batch in @batches %>
+             <%= batch.batch_id%>
+              <% end %></td>
 
-    	
-    			<h2 style="color:#BFFF00"><% Student.all.each do |student| %></h2>
-    				<h1><li style="color:pink"><%= student.student_name %></li></h1>
-    			<ul>
+	<td> <%#= link_to "SHOW", student_path(@student)%></td>
+</tr>
+<%end%>
 
-    				
-    			<% student.batches.each do |batch| %>
-    				<li style="color:green"><%= batch.batch_name %></li>
-    				<%end%><br/>
-    				</ul>
-    			<%end%>
-    	
-
-</center>
+</table>
+</div>
