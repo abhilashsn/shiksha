@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026091608) do
+ActiveRecord::Schema.define(version: 20151123134143) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151026091608) do
     t.date     "batch_commenced_date"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.date     "batch_end_date"
   end
 
   create_table "course_syllabuses", force: :cascade do |t|
@@ -87,9 +88,9 @@ ActiveRecord::Schema.define(version: 20151026091608) do
   create_table "courses", force: :cascade do |t|
     t.string   "course_name"
     t.string   "course_type"
-    t.integer  "course_duration"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "course_duration"
   end
 
   create_table "fees_paids", force: :cascade do |t|
@@ -138,10 +139,10 @@ ActiveRecord::Schema.define(version: 20151026091608) do
     t.string   "student_name"
     t.string   "student_qualification"
     t.string   "email_id"
-    t.integer  "phone_number"
     t.text     "address"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "phone_number"
   end
 
   create_table "syllabuses", force: :cascade do |t|
